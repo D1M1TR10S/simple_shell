@@ -32,8 +32,7 @@ int main(void)
 			token = strtok(NULL, TOK_DELIM);
 		} while (token != NULL);
 
-		if (builtin(argv[0]) == 0)
-			return (0);
+		builtin(argv[0]);
 
 		if (stat(argv[0], &statbuff) != 0)
 			argv[0] = findpath(argv[0]);
@@ -48,7 +47,6 @@ int main(void)
 		{
 			if (execve(argv[0], argv, NULL) == -1)
 			{
-				printf("%s\n", argv[0]);
 				printf("Error: Could not exec()\n");
 				return (1);
 			}

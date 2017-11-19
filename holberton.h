@@ -28,9 +28,10 @@ typedef struct command
 int main();
 int _strlen(char *);
 int env(void);
+int sexit(void);
 int *printdir(void);
 int _setenv(const char *name, const char *value, int overwrite);
-int (*builtin(char *s))(void);
+int builtin(char *s);
 int printenv(void);
 int _strcmp(char *s1, char *s2);
 char *_getenv(const char *name);

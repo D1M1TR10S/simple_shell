@@ -9,3 +9,8 @@ int env(void)
 		printf("%s\n", environ[line]);
 	return (0);
 }
+
+int sexit(void)
+{
+	exit(EXIT_SUCCESS);
+}
