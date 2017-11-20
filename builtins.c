@@ -10,7 +10,7 @@ int env(void)
 	return (0);
 }
 
-int sexit(void)
+int exitshell(void)
 {
 	exit(EXIT_SUCCESS);
 }

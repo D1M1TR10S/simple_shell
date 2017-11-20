@@ -10,7 +10,7 @@ int builtin(char *s)
 
 	cmnd_t comms[] = {
 		{"env", printenv},		/*{arg, func},*/
-		{"exit", sexit},
+		{"exit", exitshell},
 		{NULL, NULL}
 	};
 

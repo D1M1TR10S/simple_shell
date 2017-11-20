@@ -28,7 +28,7 @@ typedef struct command
 int main();
 int _strlen(char *);
 int env(void);
-int sexit(void);
+int exitshell(void);
 int *printdir(void);
 int _setenv(const char *name, const char *value, int overwrite);
 int builtin(char *s);
@@ -38,5 +38,7 @@ char *_getenv(const char *name);
 char *findpath(char *name);
 char *_strdup(char *str);
 char *str_concat(char *s1, char *s2);
+char *getinput(void);
+char **tokenizer(char *buffer);
 
 #endif

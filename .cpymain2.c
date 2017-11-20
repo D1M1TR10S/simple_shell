@@ -2,9 +2,9 @@
 
 int main(void)
 {
-	char *argv[5], *token, *buffer;
-	struct stat statbuff;
+	char *argv[5], *buffer, *token;
 	size_t length = 1;
+	struct stat statbuff;
 	pid_t child;
 	int status, x = 0;
 
@@ -18,27 +18,24 @@ int main(void)
 			x++;
 			token = strtok(NULL, TOK_DELIM);
 		} while (token != NULL);
+		builtin(argv[0]);
+		if (stat(argv[0], &statbuff) != 0)
+			argv[0] = findpath(argv[0]);
 
-		if (argv != NULL && argv[0] != NULL)
+		child = fork();
+		
+		if (child < 0)
+			perror("Error");
+
+		if (child == 0)
 		{
-			builtin(argv[0]);
-			if (stat(argv[0], &statbuff) != 0)
-				argv[0] = findpath(argv[0]);
-			child = fork();
-			if (child < 0)
+			if (execve(argv[0], argv, NULL) == -1)
 				perror("Error");
-
-			if (child == 0)
-			{
-				if (execve(argv[0], argv, NULL) == -1)
-					perror("Error");
-			}
-			else
 		}
-				wait(&status);
-		}
-		x = 0;
+		else
+			wait(&status);
 	}
+
 	if (read(STDIN_FILENO, buffer, length))
 	{
 		free(buffer);
