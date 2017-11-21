@@ -34,6 +34,7 @@ int _setenv(const char *name, const char *value, int overwrite);
 int builtin(char *s);
 int printenv(void);
 int _strcmp(char *s1, char *s2);
+int _help(char *args);
 char *_getenv(const char *name);
 char *findpath(char *name);
 char *_strdup(char *str);

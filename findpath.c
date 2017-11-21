@@ -1,11 +1,9 @@
-#include "holberton.h"
-
+#include "shell.h"
 /**
  * findpath - Find the path for a specific command
  * @name: Command
  * Return: Path name ending in command
  */
-
 char *findpath(char *name)
 {
 	const char *path = "PATH";

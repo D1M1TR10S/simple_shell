@@ -11,36 +11,34 @@ This program was written in **C** and compiled on `Ubuntu 14.04.3 LTS` with `gcc
 `$ gcc -Wall -Werror -Wextra -pedantic *.c -o shell`
 
 **Instructions**:
-#### Interactive Mode
+#### Execute Commands Within Shell
 `$ ./shell`
 
 A prompt will follow upon executing `./shell` command. <br />
 The shell is ready for user input: <br />
 `$ `
 
-#### NonInteractive Mode
-Pipe a command into the `shell` as follows:
-`$ echo "ls -la" | ./shell`
+#### Send Commands Into Shell
+Pipe a command into the `shell`:
+`$ echo "ls" | ./shell`
 
 ## Usage
-The following built-in functions are available in our shell
+Built-in functions:
 * `env`
 * `exit`
+* `help`
  
-Functions found by traversing the environment variable `PATH` may also be executed.
-Examples of these functions:
-* `ls` with or without arguments
+Functions from /bin folder:
+* `ls`
 * `pwd`
-* `touch`
 
 ## C Functions and Syscalls Utilized
 ```
-access (man 2 access)
 execve (man 2 execve)
 exit (man 3 exit)
 fork (man 2 fork)
 free (man 3 free)
-fstat (man 2 fstat)
+stat (man 2 fstat)
 getline (man 3 getline)
 malloc (man 3 malloc)
 perror (man 3 perror)

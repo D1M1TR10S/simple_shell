@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "shell.h"
 /**
  * *_getenv - Get environment value
  * @Name of environment variable
@@ -45,4 +45,15 @@ void _sigign(int sig)
 {
 	if (sig == SIGINT)
 		write(1, "\n$ ", 3);
+}
+
+int printenv(void)
+{
+	extern char **environ;
+	int line;
+
+	for (line = 0; environ[line] != NULL; line++)
+		printf("%s\n", environ[line]);
+
+	return (0);
 }

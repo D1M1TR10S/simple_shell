@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "shell.h"
 /**
  * get_fmt_func - Finds the necessary function for format specifier
  * @s: Char of format spec
@@ -17,9 +17,8 @@ int builtin(char *s)
 	while (comms[i].arg != NULL) /*Loops through struct until NULL*/
 	{
 		if (_strcmp(comms[i].arg, s) == 0
-				&& (_strlen(comms[i].arg) == _strlen(s))) /*Compares *s to see if it is equal to*/
-			return (comms[i].func()); /*Returns function associated with*/
-		
+				&& (_strlen(comms[i].arg) == _strlen(s)))
+			return (comms[i].func());
 		i++;
 	}
 	return (1); /*If no match return 1*/
