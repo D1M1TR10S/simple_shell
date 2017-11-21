@@ -1,10 +1,9 @@
 #include "shell.h"
 /**
  * *_getenv - Get environment value
- * @Name of environment variable
- * Return: Value of variable
+ * @name: name of environment variable
+ * Return: String helf by variable
  */
-
 char *_getenv(const char *name)
 {
 	extern char **environ;
@@ -40,13 +39,19 @@ char *_getenv(const char *name)
 	free(match);
 	return ("No matches found");
 }
-
+/**
+ * _sigign - Ignore singal input for ctrl+C
+ * @sig: ctrl+C
+ */
 void _sigign(int sig)
 {
 	if (sig == SIGINT)
 		write(1, "\n$ ", 3);
 }
-
+/**
+ * printenv - Print current environment
+ * Return: 0
+ */
 int printenv(void)
 {
 	extern char **environ;

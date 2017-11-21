@@ -1,5 +1,8 @@
 #include "shell.h"
-
+/**
+ * main - Receive input and implement arguments
+ * Return: 0 or 1
+ */
 int main(void)
 {
 	char *argv[5], *token, *buffer;

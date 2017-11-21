@@ -4,7 +4,6 @@
  * @s: Prints length of the string "Holberton"
  * Return: l
  */
-
 int _strlen(char *s)
 {
 	int l = 0;
