@@ -14,11 +14,11 @@ char *getinput(void)
 	}
 	while (1)
 	{
-		write(1, "($) ", 4);
+		write(STDOUT_FILENO, "$ ", 2);
 		check = getline(&buffer, &length, stdin);
 		if (check == -1)
 		{
-			write(1, "\n", 1);
+			write(STDOUT_FILENO, "\n", 1);
 			exit(EXIT_SUCCESS);
 		}
 		return (buffer);

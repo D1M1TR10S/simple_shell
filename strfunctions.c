@@ -71,7 +71,7 @@ char *str_concat(char *s1, char *s2)
 	for (n = 0; n < len2; n++, i++)
 		str[i] = s2[n];
 	str[i] = '\0';
-
+	free(s1);
 	return (str);
 }
 

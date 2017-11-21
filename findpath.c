@@ -18,13 +18,23 @@ char *findpath(char *name)
 	token = strtok(value, TOK_DELIM);
 	do
 	{
+		dir[num] = NULL;
 		dir[num] = _strdup(token);
 		dir[num] = str_concat(dir[num], name);
+		if (name[0] == '/')
+			break;
+		if (_strcmp(name, "./") == 0)
+			break;
 		if (stat(dir[num], &statbuff) == 0)
+		{
+			free(value);
 			return (dir[num]);
+		}
 		else
 			num++;
 		token = strtok(NULL, TOK_DELIM);
 	} while (token != NULL);
-	return (NULL);
+	free(dir[num]);
+	free(value);
+	return (name);
 }

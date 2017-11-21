@@ -40,5 +40,6 @@ char *_strdup(char *str);
 char *str_concat(char *s1, char *s2);
 char *getinput(void);
 char **tokenizer(char *buffer);
+void _sigign(int sig);
 
 #endif

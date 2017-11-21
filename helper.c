@@ -16,7 +16,8 @@ int builtin(char *s)
 
 	while (comms[i].arg != NULL) /*Loops through struct until NULL*/
 	{
-		if (_strcmp(comms[i].arg, s) == 0) /*Compares *s to see if it is equal to*/
+		if (_strcmp(comms[i].arg, s) == 0
+				&& (_strlen(comms[i].arg) == _strlen(s))) /*Compares *s to see if it is equal to*/
 			return (comms[i].func()); /*Returns function associated with*/
 		
 		i++;
