@@ -26,8 +26,7 @@ Pipe a command into the `shell`:
 Built-in functions:
 * `env`
 * `exit`
-* `help`
- 
+
 Functions from /bin folder:
 * `ls`
 * `pwd`
@@ -47,43 +46,28 @@ wait (man 2 wait)
 ```
 
 ## File Descriptions
-[shell.h](shell.h) - header file containing function prototypes, struct definitions, macros, standard libraries.
+**README.md** - Description of the Simple\_shell program.
 
-[simple_shell](simple_shell.c) - simple shell program that 1) checks if in interactice/noninteractice mode 2) prints prompt and waits for user input 3) splits user input into an array 4) prints prompt again if in interactice mode
+**shell.h** -  Header file containing function prototypes, struct definitions, macros, standard libraries.
 
-[execution](execution.c) - executes the command passed as a string
+**builtins.c** - Builtin functions to be executed.
 
-[man_1_simple_shell](man_1_simple_shell) - man page for our shell
+**getinput.c** - Reads input, turns it into a string, and then tokenizes the string into a double pointer array.
 
-**PATH**
-- [search_path](search_path.c) - looks for files in the current PATH. Returns file path on success, NULL on failure
-- [link_path](link_path.c) - creates a linked list of directories in PATH. Returns pointer to first element of linked list.
-- [free_linked_path](free_linked_path.c) - frees the linked path
+**helper.c** - Checks a struct for builtins.
 
-**BUILTINS**
-[search_builtins](search_builtins.c) - searchs for builtins from user input
-- `_env` - prints environment variable
-- `execute_exit` - exits function
+**main.c** - Opens up the Simple\_shell.
 
-**HELPER FUNCTIONS**
-- [_getenv](_getenv.c) - get an environment variable. Returns pointer to the variable <br />
-- `copy_env` - copies environment variable. Returns double pointer to copy of environment variable
-- [free_dblptr](free_dblptr.c) - frees a double pointer
-- [add_node_end](add_node_end.c) - adds a new node at the end of a list_t list. Returns pointer to added node, or NULL
-- [clear_buff](clear_buff.c) - sets buffer to '\0'
-- [_putchar](_putchar.c) - writes character to stdout
-- [putstring](putstring.c) - prints a string
-- [strfcns](strfcns.c) - helper string functions:<br />
-  `_strcat` - concatenates two strings. Returns pointer to resulting string <br />
-  `_strcmp` - compares two strings. Returns (-) if s1 < s2, (0) if s1 > s2, 0 if s1 = s2 <br />
-  `_strcpy` - copies string from src to dest. Returns pointer to dest <br />
-  `_strncmp` - compares two character strings up to n bytes. Return 0-success, -1-failure <br />
-  `strlen_rec` - finds and returns length of a string <br />
-- [tokenizer](tokenizer.c) - splits a character string into an array of tokens
+**shellfunctions.c** - Container for various functions executed within shell.
+
+**strfunctions.c** - Container for various string functions, such as: \_strcmp, str\_concat, \_strdup, etc.
+
+**tokenizer.c** - Splits the standard input string into an array of tokens.
 
 ## Authors
-Jennifer Huang      <a href='https://github.com/jhuang10123'>Jennifer's Github</a>
-Kristen Loyd        <a href='https://github.com/KRLoyd'>Kristen's Github</a>
+[Dimitrios Philliou] (https://github.com/DimitriCat)
+
+[Cameron Moore] (https://github.com/cameronlpmoore)
 
 ## License
-Public Domain, no copyright protection
+Don't even think about it buddy.

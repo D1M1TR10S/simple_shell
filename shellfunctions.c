@@ -6,7 +6,6 @@
  */
 char *_getenv(const char *name)
 {
-	extern char **environ;
 	char *match = NULL;
 	unsigned int x = 0, y = 0, z = 0, m = 0;
 
@@ -54,7 +53,6 @@ void _sigign(int sig)
  */
 int printenv(void)
 {
-	extern char **environ;
 	int line;
 
 	for (line = 0; environ[line] != NULL; line++)

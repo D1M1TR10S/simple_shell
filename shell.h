@@ -25,7 +25,7 @@ typedef struct command
 
 } cmnd_t;
 
-int main();
+int main(void);
 int _strlen(char *);
 int env(void);
 int exitshell(void);
@@ -42,5 +42,6 @@ char *str_concat(char *s1, char *s2);
 char *getinput(void);
 char **tokenizer(char *buffer);
 void _sigign(int sig);
+extern char **environ;
 
 #endif

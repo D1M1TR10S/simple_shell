@@ -44,8 +44,7 @@ char *findpath(char *name)
 
 	value = _getenv(path);
 	token = strtok(value, TOK_DELIM);
-	do
-	{
+	do {
 		dir[num] = NULL;
 		dir[num] = _strdup(token);
 		dir[num] = str_concat(dir[num], name);

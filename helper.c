@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * get_fmt_func - Finds the necessary function for format specifier
+ * builtin - Struct for builtin functions
  * @s: Char of format spec
  * Return: a function
  */

@@ -5,7 +5,7 @@
  */
 int env(void)
 {
-	extern char **environ;
+/*	extern char **environ;*/
 	int line;
 
 	for (line = 0; environ[line] != NULL; line++)
@@ -22,6 +22,7 @@ int exitshell(void)
 }
 /**
  * _help - Gives user info about a command
+ * @args: argument being sent in
  * Return: 0
  */
 int _help(char *args)
